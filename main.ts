@@ -1,6 +1,6 @@
 //% color="#83de8a"
 namespace Targeting {
-    //% block
+    //% block="Find First Sprite Along Path: Type $spriteKind Distance $range From Sprite $input "
     export function FindFirstSpriteOfType(spritetype: true, range: number, input: Sprite): any {
         let completionvar = 0
         let sprite = null
