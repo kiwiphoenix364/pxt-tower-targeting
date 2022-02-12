@@ -12,7 +12,7 @@ namespace Targeting {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
             for (let value of sprites.allOfKind(spriteKind)) {
-                completednum = scene.spritePercentPathCompleted(value)
+                let completednum: number = scene.spritePercentPathCompleted(value)
                 if (completednum = completionvar) {
                 return value
                 }
