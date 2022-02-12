@@ -13,6 +13,7 @@ namespace Targeting {
         return sprite
         let completionvar = 0
         sprite = null
+        value = null
         }
     }
 }
