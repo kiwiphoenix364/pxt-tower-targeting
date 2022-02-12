@@ -17,6 +17,7 @@ namespace Targeting {
                 return value
                 completionvar = 0
                 }
+            completednum = 0
             }
         }
     }
