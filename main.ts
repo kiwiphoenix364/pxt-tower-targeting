@@ -13,8 +13,12 @@ namespace Targeting {
                 isanysprites = true
             }
             for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
-                if (scene.spritePercentPathCompleted(value) >= completionvar && isanysprites) {
-                return value
+                if (scene.spritePercentPathCompleted(value) >= completionvar) {
+                if (isanysprites) {
+                return value    
+                } else {
+                return null
+                }
                 completionvar = 0
                 isanysprites = false
                 }
