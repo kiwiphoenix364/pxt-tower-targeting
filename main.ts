@@ -1,6 +1,7 @@
 //% color="#83de8a"
 namespace Targeting {
     //% block="Find First Sprite Along Path: Type $spriteKind Distance $range From Sprite $input "
+    //% spriteKind.shadow="spritekindPicker"
     export function FindFirstSpriteOfType(spriteKind: true, range: number, input: Sprite): any {
         let completionvar = 0
         let sprite = null
