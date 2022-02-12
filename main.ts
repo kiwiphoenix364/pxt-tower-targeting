@@ -10,8 +10,8 @@ namespace Targeting {
         for (let value of spriteutils.getSpritesWithin(SpriteKind.Enemy, range, input)) {
             if (scene.spritePercentPathCompleted(value) > competionvar) {
                 competionvar = scene.spritePercentPathCompleted(value)
-                return sprite2
+                sprite2 = value
             }
-        }
+        return sprite2}
     }
 }
