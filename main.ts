@@ -2,18 +2,19 @@
 namespace Targeting {
     //% block
     export function FindFirstSpriteOfType(spritetype: true, range: number, input: Sprite): any {
-        let competionvar = 0
+        let completionvar = 0
         let sprite = null
         let value = null
         for (let value of spriteutils.getSpritesWithin(SpriteKind.Enemy, range, input)) {
-            if (scene.spritePercentPathCompleted(value) > competionvar) {
-                competionvar = scene.spritePercentPathCompleted(value)
-                sprite = value
+            if (scene.spritePercentPathCompleted(value) > completionvar) {
+                completionvar = scene.spritePercentPathCompleted(value)
             }
-        return sprite
-        let completionvar = 0
-        sprite = null
-        value = null
+            for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
+                if (scene.spritePercentPathCompleted(value) >= completionvar) {
+                return value
+                let completionvar = 0    
+                }
+            }
         }
     }
 }
