@@ -1,6 +1,6 @@
 //% color="#83de8a"
 namespace Targeting {
-    //% block="type $type"
+    //% block="type $type range $range"
     //% type.shadow="kindPicker"
     export function FindFirstSpriteOfType(spritetype: true, range: number): any {
         let competionvar = 0
