@@ -29,7 +29,7 @@ namespace Targeting {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
             for (let value of spriteutils.getSpritesWithin(spriteKind, range, tower)) {
-                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween(value, tower) <= range) {
+                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween(value, tower) <= range && scene.spriteIsFollowingPath(value)) {
                 spriteutils.setVelocityAtAngle(input, spriteutils.angleFrom(input, value), speed)
                 }
                 completionvar = 0
