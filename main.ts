@@ -18,20 +18,18 @@ namespace Targeting {
             }
         }
     }
-    //% block="Set Sprite $input Velocity Towards First Sprite On Path of Kind $spriteKind Max Distance From Sprite $range Speed $speed"
+    //% block="Set Sprite $input Velocity Towards First Sprite On Path Of Kind $spriteKind With Speed $speed Max Distance $range From Sprite $tower"
     //% spriteKind.shadow="spritekind"
-    export function VelocityTowards(spriteKind: number, range: number, input: Sprite, speed: number) {
+    export function VelocityTowards(spriteKind: number, range: number, input: Sprite, tower: Sprite, speed: number) {
         let completionvar = 0
         let sprite = null
         let value = null
-        let ifany = false
         for (let value of spriteutils.getSpritesWithin(spriteKind, range, input)) {
-            if (scene.spritePercentPathCompleted(value) > completionvar) {
-                ifany = true
+            if (scene.spritePercentPathCompleted(value) >= completionvar) {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
             for (let value of sprites.allOfKind(spriteKind)) {
-                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween(value, input) <= range) {
+                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween(value, tower) <= range) {
                 spriteutils.setVelocityAtAngle(input, spriteutils.angleFrom(input, value), speed)
                 }
                 completionvar = 0
