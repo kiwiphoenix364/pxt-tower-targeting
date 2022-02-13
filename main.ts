@@ -25,7 +25,7 @@ namespace Targeting {
         let sprite = null
         let value = null
         for (let value of spriteutils.getSpritesWithin(spriteKind, range, tower)) {
-            if (scene.spritePercentPathCompleted(value) > completionvar) {
+            if (scene.spritePercentPathCompleted(value) >= completionvar) {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
             for (let value of spriteutils.getSpritesWithin(spriteKind, range, tower)) {
