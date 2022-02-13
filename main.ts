@@ -7,11 +7,11 @@ namespace Targeting {
         let sprite = null
         let value = null
         for (let value of spriteutils.getSpritesWithin(spriteKind, range, input)) {
-            if (scene.spritePercentPathCompleted(value) > completionvar) {
+            if (scene.spritePercentPathCompleted(value) >= completionvar) {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
-            for (let value of sprites.allOfKind(spriteKind)) {
-                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween (value, input) <= range) {
+            for (let value of spriteutils.getSpritesWithin(spriteKind, range, input)) {
+                if (scene.spritePercentPathCompleted(value) >= completionvar && completionvar > 1 && completionvar < 100) {
                 return value
                 }
             completionvar = 0
@@ -29,7 +29,7 @@ namespace Targeting {
                 completionvar = scene.spritePercentPathCompleted(value)
             }
             for (let value of spriteutils.getSpritesWithin(spriteKind, range, tower)) {
-                if (scene.spritePercentPathCompleted(value) >= completionvar && spriteutils.distanceBetween(value, tower) <= range && completionvar > 1 && completionvar < 100) {
+                if (scene.spritePercentPathCompleted(value) >= completionvar && completionvar > 1 && completionvar < 100) {
                 spriteutils.setVelocityAtAngle(input, spriteutils.angleFrom(input, value), speed)
                 }
                 completionvar = 0
